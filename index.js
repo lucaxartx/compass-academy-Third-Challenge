@@ -12,9 +12,11 @@ const port = 3000;
 const start = async () => {
     try {
         await db(process.env.MONGOURL);
-        app.listen(port);
+        app.listen(port, ()=>{
+            console.log('server has started')
+        });
     } catch (e) {
-            
+            console.log(e)
     }
 }
 
