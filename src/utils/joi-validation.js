@@ -16,4 +16,9 @@ const loginInputValidation = Joi.object({
     password: Joi.string().min(5).required(),
 });
 
-module.exports = {userInputValidation, loginInputValidation}
+const eventCreatingValidation = Joi.object({
+    description: Joi.string().min(5).required(),
+    dayOfWeek: Joi.string().required(),
+});
+
+module.exports = {userInputValidation, loginInputValidation, eventCreatingValidation}

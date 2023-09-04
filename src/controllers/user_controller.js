@@ -46,6 +46,8 @@ const userLogin = async(req,res)=>{
         throw new CustomError.UnauthenticatedError('user credentials is invalid')
     }
 
+    
+
     res.status(StatusCodes.OK).send('User logged in successfully')
 
     return;
