@@ -50,7 +50,7 @@ userSchema.pre('save', async function () {
     return isMatch;
   };
   
-  const userModel = mongoose.model('User', accountSchema);
+  const UserModel = mongoose.model('User', userSchema);
   
-module.export = userModel;
+module.exports = {UserModel};
 

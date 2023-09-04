@@ -1,6 +1,6 @@
+const Joi = require('joi')
 
-
-export const userInputValidation = Joi.object({
+const userInputValidation = Joi.object({
     firstName: Joi.string().min(3).required(),
     lastName: Joi.string().min(3).required(),
     email: Joi.string().email().required(),
@@ -10,3 +10,10 @@ export const userInputValidation = Joi.object({
     city: Joi.string().required(),
     country: Joi.string().required(),
 });
+
+const loginInputValidation = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(5).required(),
+});
+
+module.exports = {userInputValidation, loginInputValidation}
